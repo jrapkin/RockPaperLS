@@ -10,6 +10,9 @@ namespace LizardSpock
 	{
 		static void Main(string[] args)
 		{
+			Game RockPaperScissors = new Game();
+			RockPaperScissors.RunGame();
 		}
 	}
 }
+
