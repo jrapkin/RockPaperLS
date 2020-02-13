@@ -8,25 +8,15 @@ namespace LizardSpock
 {
 	public class Rock : Gesture
 	{
-/*		public List<string> LoseConditions;
-*/		
+		/*		public List<string> LoseConditions;
+		*/
 		public Rock()
 		{
 			Name = "Rock";
 
-			lossConditions = new List<string>();
-			AddToListOfLossConditions();
+			lossConditions = new List<string>() { "Paper", "spock" };
+
 		}
-
-
-		public override void AddToListOfLossConditions()
-		{
-
-			lossConditions.Add("Paper");
-			lossConditions.Add("Spock");
-		}
-
-		//member method
 
 		
 

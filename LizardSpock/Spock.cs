@@ -11,15 +11,8 @@ namespace LizardSpock
 		public Spock()
 		{
 			Name = "Spock";
-			lossConditions = new List<string>();
-			AddToListOfLossConditions();
+			lossConditions = new List<string>() { "Lizard", "Paper" };
 		}
 
-		public override void AddToListOfLossConditions()
-		{
-
-			lossConditions.Add("Lizard");
-			lossConditions.Add("Paper");
-		}
 	}
 }

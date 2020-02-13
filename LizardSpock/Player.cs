@@ -14,29 +14,13 @@ namespace LizardSpock
 		public List<Gesture> GestureOptions;
 		public Gesture ChosenGesture;
 
-		//Constructor
 		public Player()
 		{
-			GestureOptions = new List<Gesture>();
-			AddToListOfGestures();
-		}
-
-		//Member Methods
-		public void AddToListOfGestures()
-		{
-			GestureOptions.Add(new Rock());
-			GestureOptions.Add(new Paper());
-			GestureOptions.Add(new Scissors());
-			GestureOptions.Add(new Lizard());
-			GestureOptions.Add(new Spock());
+			GestureOptions = new List<Gesture>() { new Rock(), new Paper(), new Scissors(), new Lizard(), new Spock() };
 		}
 
 		public abstract void SetName();
 		public abstract void PickGesture();
-
-
-		//makes/picks a move (gesture)
-
 
 	}
 }

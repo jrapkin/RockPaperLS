@@ -11,18 +11,9 @@ namespace LizardSpock
 		public Lizard()
 		{
 			Name = "Lizard";
-			lossConditions = new List<string>();
-			attack = new List<string>();
-			AddToListOfLossConditions();
+			lossConditions = new List<string>() { "Scissors", "Rock" };
+
 		}
-
-		public override void AddToListOfLossConditions()
-		{
-
-			lossConditions.Add("Scissors");
-			lossConditions.Add("Rock");
-		}
-
 
 	}
 }

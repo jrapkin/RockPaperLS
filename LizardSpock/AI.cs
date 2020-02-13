@@ -8,7 +8,6 @@ namespace LizardSpock
 {
 	class AI : Player
 	{
-		//Member Variables/ Properties
 		Random GetRandom;
 
 		//Constructor
@@ -18,10 +17,8 @@ namespace LizardSpock
 			GetRandom = new Random();
 		}
 
-		//Member Methods
 		public override void PickGesture()
 		{
-			//ChosenGesture = GestureOptions[1];
 			int aiRoll = GetRandom.Next(0, 5);
 			if (aiRoll == 0)
 			{

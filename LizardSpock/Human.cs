@@ -8,28 +8,21 @@ namespace LizardSpock
 {
 	class Human : Player
 	{
-		//Member Variables/ Properties
 
-
-		//Constructor
 		public Human()
 		{
 			SetName();
 			
 		}
-
-		//Member Methods
 		public override void SetName()
 		{
 			Console.WriteLine("What is your name?");
 			Name = Console.ReadLine();
 			Console.WriteLine($"{Name} has joined the game!");
 		}
-		//picks a move
+
 		public override void PickGesture()
 		{
-			/*			int i = ValidateUserInput();
-						string test = ValidateUserInput();*/
 			ChosenGesture = ValidateUserInput();
 			 		   
 		}

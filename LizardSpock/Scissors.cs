@@ -11,15 +11,9 @@ namespace LizardSpock
 		public Scissors()
 		{
 			Name = "Scissors";
-			lossConditions = new List<string>();
-			AddToListOfLossConditions();
-		}
+			lossConditions = new List<string>() { "Rock", "Spock" };
 
-		public override void AddToListOfLossConditions()
-		{
 
-			lossConditions.Add("Rock");
-			lossConditions.Add("Spock");
 		}
 	}
 }
