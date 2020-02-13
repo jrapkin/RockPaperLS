@@ -39,21 +39,15 @@ namespace LizardSpock
             WelcomeMessage();
             //single player or two player?
             //validate user input
-            DetermineNumberOfPlayers();
             SetPlayers();
 
-            //if single player selected, (choose name??)
-            //set up New single player Game in valid state
-            //else if second plyer selected
-            //set up new two player game in valid state
-            //else if quit selected
-            //quit
-            // else
-            //prompt user for valid input
+            Console.ReadLine();
             PlayerOne.PickGesture();
+            //validate gesture choice??
             PlayerTwo.PickGesture();
-
-
+            //compare getures
+            DisplayPlayerChoice();
+            PlayerOne.GestureOptions[0].CompareGestures();
             //New Single Player Game
             //Loop / Itteration begin?
             //Determine who goes first
@@ -91,30 +85,43 @@ namespace LizardSpock
 
         public void SetPlayers()
         {
-            string numberOfPlayers = DetermineNumberOfPlayers();
-            if (numberOfPlayers == "single player")
+            bool validSelectionCheck = false;
+            do
             {
-                PlayerOne = new Human();
-                PlayerTwo = new AI();
+                string numberOfPlayers = DetermineNumberOfPlayers();
+                if (numberOfPlayers == "single player")
+                {
+                    PlayerOne = new Human();
+                    PlayerTwo = new AI();
+                    validSelectionCheck = !validSelectionCheck;
+                }
+                else if (numberOfPlayers == "two player")
+                {
+                    PlayerOne = new Human();
+                    PlayerTwo = new Human();
+                    validSelectionCheck = !validSelectionCheck;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid selection. \n Enter single player if you want to test your might against the computer. \n Enter two player if you want to test your might against another human!");
+                }
             }
-            else if (numberOfPlayers == "two player") 
-            { 
-            PlayerOne = new Human();
-            PlayerTwo = new Human();
-            }
-            else
-            { 
-                Console.WriteLine("Please enter a valid selection. \n Enter single player if you want to test your might against the computer. \n Enter two player if you want to test your might against another human!"); 
-            }
+            while (validSelectionCheck == false);
         }
 
-        
         public string TakePlayerInput()
         {
             string userInput = Console.ReadLine();
 
             return userInput;
         }
+
+        public void DisplayPlayerChoice()
+        {
+            Console.WriteLine($" {PlayerOne.Name} has chosen {PlayerOne.ChosenGesture}!");
+            Console.WriteLine($" {PlayerTwo.Name} has chosen {PlayerTwo.ChosenGesture}!");
+        }
+
 
         private void NewGame()
         {
@@ -127,25 +134,25 @@ namespace LizardSpock
                 switch (userInput)
                 {
                     case "yes":
-                        GameLogic();
+                        RunGame();
                         newGameCheck = !newGameCheck;
                         break;
 
                     case "Yes":
-                        GameLogic();
+                        RunGame();
                         newGameCheck = !newGameCheck;
                         break;
                     case "new game":
-                        GameLogic();
+                        RunGame();
                         newGameCheck = !newGameCheck;
                         break;
                     case "New Game":
-                        GameLogic();
+                        RunGame();
                         newGameCheck = !newGameCheck;
                         break;
 
                     case "1":
-                        GameLogic();
+                        RunGame();
                         newGameCheck = !newGameCheck;
                         break;
 

@@ -12,6 +12,7 @@ namespace LizardSpock
 		{
 			Game RockPaperScissors = new Game();
 			RockPaperScissors.RunGame();
+
 		}
 	}
 }
