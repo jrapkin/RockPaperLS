@@ -12,7 +12,7 @@ namespace LizardSpock
 		public string Name;
 		public int Score;
 		public List<Gesture> GestureOptions;
-		public string ChosenGesture;
+		public Gesture ChosenGesture;
 
 		//Constructor
 		public Player()

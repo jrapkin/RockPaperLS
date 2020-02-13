@@ -28,12 +28,12 @@ namespace LizardSpock
 		//picks a move
 		public override void PickGesture()
 		{
-			int i = ValidateUserInput();
-			
-			ChosenGesture = GestureOptions[i].Name;
-					   
+			/*			int i = ValidateUserInput();
+						string test = ValidateUserInput();*/
+			ChosenGesture = ValidateUserInput();
+			 		   
 		}
-		public int ValidateUserInput()
+		public Gesture ValidateUserInput()
 		{
 			bool validationCheck = false;
 	
@@ -47,25 +47,25 @@ namespace LizardSpock
 					case "Rock":
 					case "rock":
 						validationCheck = !validationCheck;
-						return 0;
+						return GestureOptions[0];
 						
 					case "Paper":
 					case "paper":
 						validationCheck = !validationCheck;
-						return 1;
+						return GestureOptions[1];
 					case "Scissors":
 					case "scissors":
 						validationCheck = !validationCheck;
-						return 2;
+						return GestureOptions[2];
 					case "Lizard":
 					case "lizard":
 						validationCheck = !validationCheck;
-						return 3;
-						
+						return GestureOptions[3];
+
 					case "Spock":
 					case "spock":
 						validationCheck = !validationCheck;
-						return 4;
+						return GestureOptions[4];
 					default:
 						Console.WriteLine("Not a valid choice, please choose Rock, Paper, Scissors, Lizard, or Spock");
 						break;

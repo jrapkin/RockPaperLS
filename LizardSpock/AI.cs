@@ -21,33 +21,30 @@ namespace LizardSpock
 		//Member Methods
 		public override void PickGesture()
 		{
-/*			test value ChosenGesture = GestureOptions[1].Name;
-*/			int aiRoll = GetRandom.Next(0, 6);
+			//ChosenGesture = GestureOptions[1];
+			int aiRoll = GetRandom.Next(0, 5);
 			if (aiRoll == 0)
 			{
-				ChosenGesture = GestureOptions[0].Name;
-				
+				ChosenGesture = GestureOptions[0];
+
 			}
 			if (aiRoll == 1)
 			{
-				ChosenGesture = GestureOptions[1].Name;
+				ChosenGesture = GestureOptions[1];
 			}
 			if (aiRoll == 2)
 			{
-				ChosenGesture = GestureOptions[2].Name;
+				ChosenGesture = GestureOptions[2];
 			}
 			if (aiRoll == 3)
 			{
-				ChosenGesture = GestureOptions[3].Name;
+				ChosenGesture = GestureOptions[3];
 			}
 			if (aiRoll == 4)
 			{
-				ChosenGesture = GestureOptions[4].Name;
+				ChosenGesture = GestureOptions[4];
 			}
-			if (aiRoll == 5)
-			{
-				ChosenGesture = GestureOptions[5].Name;
-			}
+
 
 
 		}

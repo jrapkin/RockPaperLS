@@ -12,16 +12,14 @@ namespace LizardSpock
 		{
 			Name = "Spock";
 			lossConditions = new List<string>();
+			AddToListOfLossConditions();
 		}
-		//public override void CompareGestures()
-		
 
-		
-		public void AddToListOfLossConditions()
+		public override void AddToListOfLossConditions()
 		{
 
+			lossConditions.Add("Lizard");
 			lossConditions.Add("Paper");
-			lossConditions.Add("Spock");
 		}
 	}
 }

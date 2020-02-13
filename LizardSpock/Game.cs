@@ -41,13 +41,12 @@ namespace LizardSpock
             //validate user input
             SetPlayers();
 
-            Console.ReadLine();
             PlayerOne.PickGesture();
             //validate gesture choice??
             PlayerTwo.PickGesture();
             //compare getures
             DisplayPlayerChoice();
-            PlayerOne.GestureOptions[0].CompareGestures();
+            TestComparison();
             //New Single Player Game
             //Loop / Itteration begin?
             //Determine who goes first
@@ -68,6 +67,22 @@ namespace LizardSpock
 
 
         //Member Methods
+        private void TestComparison()
+        {
+
+
+            if (PlayerTwo.ChosenGesture.lossConditions.Contains(PlayerOne.ChosenGesture.Name))
+            {
+                Console.WriteLine("Player one wins this round!");
+            }
+            else if (PlayerOne.ChosenGesture.lossConditions.Contains(PlayerTwo.ChosenGesture.Name))
+            {
+                Console.WriteLine("Player wo Wins this round!");
+            }
+
+            else
+            { Console.WriteLine("It's a tie!"); }
+        }
         private void WelcomeMessage()
         {
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock. \n \n");
@@ -118,8 +133,8 @@ namespace LizardSpock
 
         public void DisplayPlayerChoice()
         {
-            Console.WriteLine($" {PlayerOne.Name} has chosen {PlayerOne.ChosenGesture}!");
-            Console.WriteLine($" {PlayerTwo.Name} has chosen {PlayerTwo.ChosenGesture}!");
+            Console.WriteLine($" {PlayerOne.Name} has chosen {PlayerOne.ChosenGesture.Name}!");
+            Console.WriteLine($" {PlayerTwo.Name} has chosen {PlayerTwo.ChosenGesture.Name}!");
         }
 
 
