@@ -10,7 +10,7 @@ namespace LizardSpock
 	{
 		public Paper()
 		{
-			Name = "Paper";
+			name = "Paper";
 			lossConditions = new List<string>() { "Scissors", "Lizard" };
 
 		}

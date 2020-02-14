@@ -17,13 +17,13 @@ namespace LizardSpock
 		public override void SetName()
 		{
 			Console.WriteLine("What is your name?");
-			Name = Console.ReadLine();
-			Console.WriteLine($"{Name} has joined the game!");
+			name = Console.ReadLine();
+			Console.WriteLine($"{name} has joined the game!");
 		}
 
 		public override void PickGesture()
 		{
-			ChosenGesture = ValidateUserInput();
+			chosenGesture = ValidateUserInput();
 			 		   
 		}
 		public Gesture ValidateUserInput()
@@ -39,26 +39,26 @@ namespace LizardSpock
 				{
 					case "Rock":
 					case "rock":
-						validationCheck = !validationCheck;
-						return GestureOptions[0];
+						validationCheck = true;
+						return gestureOptions[0];
 						
 					case "Paper":
 					case "paper":
-						validationCheck = !validationCheck;
-						return GestureOptions[1];
+						validationCheck = true;
+						return gestureOptions[1];
 					case "Scissors":
 					case "scissors":
-						validationCheck = !validationCheck;
-						return GestureOptions[2];
+						validationCheck = true;
+						return gestureOptions[2];
 					case "Lizard":
 					case "lizard":
-						validationCheck = !validationCheck;
-						return GestureOptions[3];
+						validationCheck = true;
+						return gestureOptions[3];
 
 					case "Spock":
 					case "spock":
-						validationCheck = !validationCheck;
-						return GestureOptions[4];
+						validationCheck = true;
+						return gestureOptions[4];
 					default:
 						Console.WriteLine("Not a valid choice, please choose Rock, Paper, Scissors, Lizard, or Spock");
 						break;

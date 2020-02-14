@@ -12,7 +12,7 @@ namespace LizardSpock
 		*/
 		public Rock()
 		{
-			Name = "Rock";
+			name = "Rock";
 
 			lossConditions = new List<string>() { "Paper", "spock" };
 

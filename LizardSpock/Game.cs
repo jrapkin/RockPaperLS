@@ -10,14 +10,14 @@ namespace LizardSpock
 	{
 
 
-        Player PlayerOne;
-        Player PlayerTwo;
-        int PlayerOneScore;
-        int PlayerTwoScore;
+        Player playerOne;
+        Player playerTwo;
+        int playerOneScore;
+        int playerTwoScore;
         public Game()
         {
-            PlayerOneScore = 0;
-            PlayerTwoScore = 0;
+            playerOneScore = 0;
+            playerTwoScore = 0;
             
         }
 
@@ -28,14 +28,14 @@ namespace LizardSpock
             do
             {
                
-                PlayerOne.PickGesture();
-                PlayerTwo.PickGesture();
+                playerOne.PickGesture();
+                playerTwo.PickGesture();
                 DisplayPlayerChoice();
                 CompareMoves();
-                Console.WriteLine($"Player one has {PlayerOneScore} points. \nPlayer two has {PlayerTwoScore} points.\n\n");
+                Console.WriteLine($"Player one has {playerOneScore} points. \nPlayer two has {playerTwoScore} points.\n\n");
 
             }
-            while (PlayerOneScore <3 && PlayerTwoScore <3);
+            while (playerOneScore <3 && playerTwoScore <3);
             DisplayGameWinner();
             NewGameCheck();
             QuitGame();
@@ -63,15 +63,15 @@ namespace LizardSpock
                 string numberOfPlayers = DetermineNumberOfPlayers();
                 if (numberOfPlayers == "single player")
                 {
-                    PlayerOne = new Human();
-                    PlayerTwo = new AI();
-                    validSelectionCheck = !validSelectionCheck;
+                    playerOne = new Human();
+                    playerTwo = new AI();
+                    validSelectionCheck = true;
                 }
                 else if (numberOfPlayers == "two player")
                 {
-                    PlayerOne = new Human();
-                    PlayerTwo = new Human();
-                    validSelectionCheck = !validSelectionCheck;
+                    playerOne = new Human();
+                    playerTwo = new Human();
+                    validSelectionCheck = true;
                 }
                 else
                 {
@@ -82,10 +82,6 @@ namespace LizardSpock
             while (validSelectionCheck == false);
         }
 
-
-           
-        
-
         public string TakePlayerInput()
         {
             string userInput = Console.ReadLine();
@@ -95,37 +91,38 @@ namespace LizardSpock
 
         public void DisplayPlayerChoice()
         {
-            Console.WriteLine($" {PlayerOne.Name} has chosen {PlayerOne.ChosenGesture.Name}!");
-            Console.WriteLine($" {PlayerTwo.Name} has chosen {PlayerTwo.ChosenGesture.Name}!");
+            Console.WriteLine($" {playerOne.name} has chosen {playerOne.chosenGesture.name}!");
+            Console.WriteLine($" {playerTwo.name} has chosen {playerTwo.chosenGesture.name}!");
         }
         private void CompareMoves()
         {
 
 
-            if (PlayerTwo.ChosenGesture.lossConditions.Contains(PlayerOne.ChosenGesture.Name))
+            if (playerTwo.chosenGesture.lossConditions.Contains(playerOne.chosenGesture.name))
             {
                 Console.WriteLine("Player one wins this round!");
-                PlayerOneScore++;
+                playerOneScore++;
             }
-            else if (PlayerOne.ChosenGesture.lossConditions.Contains(PlayerTwo.ChosenGesture.Name))
+            else if (playerOne.chosenGesture.lossConditions.Contains(playerTwo.chosenGesture.name))
             {
                 Console.WriteLine("Player two Wins this round!");
-                PlayerTwoScore++;
+                playerTwoScore++;
             }
 
             else
             { Console.WriteLine("It's a tie!"); }
         }
+
         public void DisplayGameWinner()
         {
 
-            if (PlayerOneScore >= 3)
+            if (playerOneScore >= 3)
             {
-                Console.WriteLine($"{PlayerOne.Name} has won the game.");
+                Console.WriteLine($"{playerOne.name} has won the game.");
             }
-            else if (PlayerTwoScore >= 3)
+            else if (playerTwoScore >= 3)
             {
-                Console.WriteLine($"{PlayerTwo.Name} has won the game.");
+                Console.WriteLine($"{playerTwo.name} has won the game.");
             }
 
         }
@@ -144,7 +141,7 @@ namespace LizardSpock
                     case "new game":
                     case "New Game":
                     case "1":
-                        newGameCheck = !newGameCheck;
+                        newGameCheck = true;
                         RunGame();
                         break;
 
@@ -152,7 +149,7 @@ namespace LizardSpock
                     case "No":
                     case "2":
                         QuitGame();
-                        newGameCheck = !newGameCheck;
+                        newGameCheck = true;
                         break;
 
                     default:

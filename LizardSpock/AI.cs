@@ -8,38 +8,38 @@ namespace LizardSpock
 {
 	class AI : Player
 	{
-		Random GetRandom;
+		Random getRandom;
 
 		//Constructor
 		public AI()
 		{
 			SetName();
-			GetRandom = new Random();
+			getRandom = new Random();
 		}
 
 		public override void PickGesture()
 		{
-			int aiRoll = GetRandom.Next(0, 5);
+			int aiRoll = getRandom.Next(0, 5);
 			if (aiRoll == 0)
 			{
-				ChosenGesture = GestureOptions[0];
+				chosenGesture = gestureOptions[0];
 
 			}
 			if (aiRoll == 1)
 			{
-				ChosenGesture = GestureOptions[1];
+				chosenGesture = gestureOptions[1];
 			}
 			if (aiRoll == 2)
 			{
-				ChosenGesture = GestureOptions[2];
+				chosenGesture = gestureOptions[2];
 			}
 			if (aiRoll == 3)
 			{
-				ChosenGesture = GestureOptions[3];
+				chosenGesture = gestureOptions[3];
 			}
 			if (aiRoll == 4)
 			{
-				ChosenGesture = GestureOptions[4];
+				chosenGesture = gestureOptions[4];
 			}
 
 
@@ -47,8 +47,8 @@ namespace LizardSpock
 		}
 		public override void SetName()
 		{
-			Name = "Skynet";
-			Console.WriteLine($"{Name} has joined the game!");
+			name = "Skynet";
+			Console.WriteLine($"{name} has joined the game!");
 		}
 
 

@@ -9,7 +9,7 @@ namespace LizardSpock
 	public abstract class Gesture
 
 	{
-		public string Name;
+		public string name;
 		public List<string> lossConditions;
 		public Gesture()
 		{
